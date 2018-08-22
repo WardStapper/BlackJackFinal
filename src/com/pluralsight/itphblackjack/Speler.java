@@ -1,36 +1,13 @@
 package com.pluralsight.itphblackjack;
 
-public class Speler {
+import com.pluralsight.itphblackjack.Kaart;
 
+import java.util.ArrayList;
 
-    public Speler(){
+public class Speler{
+    ArrayList<Kaart> hand = new ArrayList<>();
 
+public void neemKaart(){}
 
-    }
-
-    public  void hand(){
-
-        String[] handKaart
-
-    }
-
-    public int getScore(){
-        int score = 0;
-        for( kaart in hand){
-            switch(kaart){
-                case "Aas": score += 1;
-                break;
-                case "Twee": score +=2;
-                break;
-                case "Drie": score +=3;
-                break;
-                case "Vier": score +=4;
-                break;
-                case "Vijf": score +=5;
-
-            }
-        }
-
-    }
 
 }

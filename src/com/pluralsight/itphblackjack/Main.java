@@ -25,11 +25,12 @@ import java.util.Scanner;
     public class Main {
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            Kaart kaarten = new Kaart();
+           Deck deck = new Deck();
             System.out.println("Welkom bij BlackJack, wilt u het geschudde deck kaarten zien? J/N?");
             String schudden = sc.nextLine();
             if (schudden.equals("J")){
-           kaarten.kaartenSchudden();}
+            deck.schudDeck();
+            deck.openDeck();}
            else {
                 System.out.println("Oké, dan niet!");
             }
