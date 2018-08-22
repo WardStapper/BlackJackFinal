@@ -18,7 +18,7 @@ import java.util.Scanner;
         Vanaf hier wordt het spannender. Het is vanaf deze doelstelling verplicht om met kaarten als objecten te werken. Kaart kaart = new Kaart(). De vorige doelstellingen mochten prima op andere wijzen volbracht worden, vanaf hier is Object Georienteerd programmeren een vereiste.
         De speler krijgt twee kaarten toebedeeld wanneer hij start, zoals bij de werkelijke regels. Ook kan de Aas 1 of 11 punten waard zijn. Dat is afhankelijk van het gegeven of hij anders boven de 21 punten uit komt.
         Als een speler niet op tijd past, is de speler af.
-
+***Verplaatsen van kaarten tussen arrays*****
 */
 
 

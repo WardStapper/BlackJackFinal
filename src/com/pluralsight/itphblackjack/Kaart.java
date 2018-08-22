@@ -13,6 +13,8 @@ public class Kaart {
 
         public Kaart() {
 
+                int count = 0;
+
                 for (int i = 0; i < kaart.length; i++) {
                     for (int j = 0; j < type.length; j++) {
                         deck[type.length * i + j] = type[j]+ " " + kaart[i]  ; //4 geswithced naar type.length.
