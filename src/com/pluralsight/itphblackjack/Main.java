@@ -11,7 +11,7 @@ import java.util.Scanner;
            boolean keuze = false;
 
     System.out.println("Welkom bij BlackJack, wilt u het geschudde deck kaarten zien? J/N?");
-
+//
     while (!keuze) {
         String schudden = sc.nextLine();
         schudden = schudden.toUpperCase();
