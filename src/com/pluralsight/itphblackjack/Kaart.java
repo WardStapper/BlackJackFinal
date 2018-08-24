@@ -26,17 +26,4 @@ public class Kaart {
 
     }
 
-
-    void kaartCheck(){
-        if(kaart.length() <= 2){
-            waarde = Integer.parseInt(kaart);
-            for(int i=0;i<kaart.length();i++){
-                System.out.println(waarde);
-            }
-        }
-
-    }
-
-
-
-}
+ }
