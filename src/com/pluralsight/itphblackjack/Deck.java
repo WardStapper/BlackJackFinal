@@ -3,7 +3,7 @@ package com.pluralsight.itphblackjack;
 import java.util.ArrayList;
 import java.util.Collections;
 //Deck klasse, 2 String arrays met daarin de kaart en het type kaart.
-//Aanmaak 2 ArrayLists om deck en handkaarten in onder te brengen
+//Aanmaak 2 ArrayLists om spelDeck en handkaarten in onder te brengen
 
 public class Deck {
     String[] type = {"Harten", "Ruiten", "Schoppen", "Klaveren"};
@@ -12,7 +12,7 @@ public class Deck {
     ArrayList<Kaart> deck = new ArrayList<>();
     ArrayList<Kaart> hand = new ArrayList<>();
     int totaalscore =0;
-    //Deckconstructor, zodra het spel begint (waarbij het deck aangemaakt wordt in de main) zal deze worden aangeroepen. Vult mijn deckarraylist hierboven met kaarten.
+    //Deckconstructor, zodra het spel begint (waarbij het spelDeck aangemaakt wordt in de main) zal deze worden aangeroepen. Vult mijn deckarraylist hierboven met kaarten.
     public Deck() {
 
         for (String t : type) {
@@ -20,13 +20,13 @@ public class Deck {
 
 
                 Kaart nieuw = new Kaart(t, k); //zorgt ervoor dat er in kaart mijn kaarten een waarde krijgen.
-                deck.add(nieuw); //vult mijn deck met objecten type kaart
+                deck.add(nieuw); //vult mijn spelDeck met objecten type kaart
             }
         }
-        System.out.println("Er zitten momenteel " + deck.size() + " kaarten in het deck!"); //checkup om te zien of er daadwerkelijk 52 kaarten zijn in mn deck.
+        System.out.println("Er zitten momenteel " + deck.size() + " kaarten in het spelDeck!"); //checkup om te zien of er daadwerkelijk 52 kaarten zijn in mn spelDeck.
 
     }
-    //Schudden van mijn deck, collections functie.
+    //Schudden van mijn spelDeck, collections functie.
     public void schudDeck(){
 
         Collections.shuffle(deck);
@@ -34,7 +34,7 @@ public class Deck {
 
     }
 
-    //loopt door het deck heen en print uit welke kaart op welke positie zit.
+    //loopt door het spelDeck heen en print uit welke kaart op welke positie zit.
     public void bekijkDeck(){
         for (int a = 0; a < deck.size(); a++) {
             System.out.println(deck.get(a).type + " " + deck.get(a).kaart);
@@ -42,8 +42,8 @@ public class Deck {
         }
     }
 
-    //neemt de eerste kaart (2 kaarten met een lege hand) van de bovenkant van het deck
-    //verwijderd de getrokken kaart uit het deck
+    //neemt de eerste kaart (2 kaarten met een lege hand) van de bovenkant van het spelDeck
+    //verwijderd de getrokken kaart uit het spelDeck
     //voegt de getrokken kaart toe aan de hand
     public void neemKaart() {
 
@@ -51,8 +51,8 @@ public class Deck {
             System.out.println("U heeft de volgende kaarten getrokken: ");
             for(int p = 0; p < 2; p++){
                 hand.add(deck.get(0));                                      //kaart toevoegen aan de hand
-                System.out.println(deck.get(0).type + " " + deck.get(0).kaart); //uitprinten  eerste en tweede getrokken kaart uit deck.
-                deck.remove(0);                                     //verwijderen eerste kaart van het deck
+                System.out.println(deck.get(0).type + " " + deck.get(0).kaart); //uitprinten  eerste en tweede getrokken kaart uit spelDeck.
+                deck.remove(0);                                     //verwijderen eerste kaart van het spelDeck
             }
 
              }
@@ -126,9 +126,9 @@ public class Deck {
 
             }
 
-    public void spelReset() {                        //terugstoppen van de kaarten in het deck, conceptueel
+    public void spelReset() {                        //terugstoppen van de kaarten in het spelDeck, conceptueel
 
-        int handSize = hand.size();             //zet de handsize vóór reset vast, zodat ik deze kan gebruiken voor het resetten van mijn deck (anders krimpt de handsize mee tijdens de forloop -> 51 kaarten ipv 52)
+        int handSize = hand.size();             //zet de handsize vóór reset vast, zodat ik deze kan gebruiken voor het resetten van mijn spelDeck (anders krimpt de handsize mee tijdens de forloop -> 51 kaarten ipv 52)
 
         for (int r = 0; r < handSize; r++) {
 
