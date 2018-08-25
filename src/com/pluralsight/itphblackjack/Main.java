@@ -40,14 +40,14 @@ public class Main {
        /*     //Schudden
             for (int i = 0; i < n; i++) {
                 int r = i + (int) (Math.random() * (n-i));
-                String random = deck[r];
-                deck[r] = deck[i];
-                deck[i] = random;
+                String random = spelDeck[r];
+                spelDeck[r] = spelDeck[i];
+                spelDeck[i] = random;
             }
 
-            // print shuffled deck
+            // print shuffled spelDeck
             for (int i = 0; i < n; i++) {
-                System.out.println(deck[i]);
+                System.out.println(spelDeck[i]);
             }
         }
 

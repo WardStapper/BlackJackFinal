@@ -2,10 +2,10 @@ package com.pluralsight.itphblackjack;
 //Klasse Kaart
 public class Kaart {
 
-    String type;
-    String kaart;
-    int waarde;
-    boolean Aas = false;
+    protected String type;
+    protected String kaart;
+    protected int waarde;
+    protected boolean Aas = false;
     //Kaartconstructor
 //Aanmaak kaart waarde, veranderen van de 'stringwaarden' van mn object in een daadwerkelijke int 'waarde' zodat ik de score kan bijhouden.
     public Kaart(String t, String k){

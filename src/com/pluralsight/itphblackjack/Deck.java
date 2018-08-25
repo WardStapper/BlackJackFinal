@@ -89,8 +89,8 @@ public class Deck {
         //
         public int handScore() {
 
-             int totaalscore = 0;
-          
+            int totaalscore = 0;
+
 
             for (int i = 0; i < hand.size(); i++) {               //loopt over de hand heen en zet de kaarten om in een score, telt deze bij elkaar op
                 //  System.out.println(hand.get(i).waarde);
@@ -106,25 +106,27 @@ public class Deck {
                             break;
                         } else if (totaalscore > 21) {          //Bij geen aas in de hand en toch >21, spelverlies
                             System.out.println(totaalscore + ", helaas, u heeft verloren!");
-                           spelReset();        //reset het spel alvast voor een eventueel volgende ronde
+                            spelReset();        //reset het spel alvast voor een eventueel volgende ronde
 
-                             //  System.exit(0);
+
                         }
 
                     }
 
-                    } else if (totaalscore == 21) { //spelwinst
-                        System.out.println("Gefeliciteerd, u heeft gewonnen met " + totaalscore + " punten!");
-                        spelReset();
-                       // System.exit(0);
-                    }
-
+                } else if (totaalscore == 21) { //spelwinst
+                    System.out.println("Gefeliciteerd, u heeft gewonnen met " + totaalscore + " punten!");  //Weergave score met winst
+                    spelReset();
 
                 }
-                System.out.println("U heeft een totaalscore van: " + totaalscore);
-                return totaalscore;
+
 
             }
+            if (totaalscore != 21 && totaalscore < 21) {
+                System.out.println("U heeft een totaalscore van: " + totaalscore); //weergave totaalscore}
+
+            }
+            return totaalscore;
+        }
 
     public void spelReset() {                        //terugstoppen van de kaarten in het spelDeck, conceptueel
 

@@ -51,9 +51,12 @@ public class Spel {
 //tweede fase van het spel waarbij de speler de mogelijkheid krijgt om nog een kaart te trekken, te stoppen of te passen
     public void spelFaseTwee(){
         //while loop die zorgt voor de toetsen pkq
+
         while (!gevraagd && !gepast) {
-            System.out.println("Wat wilt u nu doen: ");
-            System.out.println("Toets p voor pas, toets k voor een nieuwe kaart, toets q om het spel te beïndigen.");
+            if (spelDeck.totaalscore < 21 || spelDeck.totaalscore !=21) {
+                System.out.println("Wat wilt u nu doen: ");
+                System.out.println("Toets p voor pas, toets k voor een nieuwe kaart, toets q om het spel te beïndigen.");
+            }
 
             String volgendeMove = sc.nextLine();
             volgendeMove = volgendeMove.toLowerCase();
