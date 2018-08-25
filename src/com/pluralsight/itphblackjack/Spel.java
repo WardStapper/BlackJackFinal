@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Spel {
 
     Scanner sc = new Scanner(System.in);
-    Deck deck = new Deck();
+    Deck spelDeck = new Deck();
     boolean gevraagd = false;
     boolean gepast = false;
     boolean nieuwspel = false;
@@ -15,11 +15,11 @@ public class Spel {
         boolean keuze = false;
 
        if(nieuwspel == false){              //zorgt voor welkom bij een nieuw spel
-           System.out.println("Welkom bij BlackJack, wilt u het geschudde deck kaarten zien? J/N?");
+           System.out.println("Welkom bij BlackJack, wilt u het geschudde spelDeck kaarten zien? J/N?");
        }
             else if (nieuwspel == true ){
             System.out.println("U speelt het spel nu opnieuw!");    //Welkom bij replay
-           System.out.println("Wilt u wederom het geschudde deck kaarten zien? J / N");
+           System.out.println("Wilt u wederom het geschudde spelDeck kaarten zien? J / N");
             System.out.println("-----------------------");
             System.out.println();
         }
@@ -27,10 +27,10 @@ public class Spel {
             String schudden = sc.nextLine();
 
             schudden = schudden.toUpperCase();
-            deck.schudDeck();
+            spelDeck.schudDeck();
             if (schudden.equals("J")) {
 
-                deck.bekijkDeck();
+                spelDeck.bekijkDeck();
                 System.out.println();
                 System.out.println("----------------------------------------");
                 keuze = true;
@@ -40,12 +40,11 @@ public class Spel {
                 keuze = true;
             } else {
                 System.out.println("U heeft geen gepaste keuze gemaakt!");
-                System.out.println("Wilt u het geschudde deck kaarten zien? J/N?");
-            }
+               }
         }
 
 
-        deck.neemKaart();
+        spelDeck.neemKaart();
 
 
     }
@@ -62,7 +61,7 @@ public class Spel {
             if (volgendeMove.equals("p")) {
                 gepast = true;
             } else if (volgendeMove.equals("k")) {
-                deck.neemKaart();
+                spelDeck.neemKaart();
                 gevraagd = true;                    //deze kan eventueel weggehaald worden om meer dan 1 kaart te nemen.
             } else if (volgendeMove.equals("q")) {
                 System.out.println("Oké, jammer het spel sluit nu af!");
@@ -89,11 +88,11 @@ public class Spel {
             replay = replay.toUpperCase();
             if (replay.equals("J")){
 
-                deck.spelReset();
+                spelDeck.spelReset();
                 eindeSpel = false;
                 nieuwspel = true;
                 gevraagd = false;
-                System.out.println("Het deck heeft nu weer " + (deck.deck.size()) + " kaarten!"); // check om te kijken of mijn deck weer 52 kaarten heeft
+                System.out.println("Het spelDeck heeft nu weer " + (spelDeck.deck.size()) + " kaarten!"); // check om te kijken of mijn spelDeck weer 52 kaarten heeft
 
 
             }
