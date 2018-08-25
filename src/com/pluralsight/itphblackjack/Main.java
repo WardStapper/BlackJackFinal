@@ -1,20 +1,20 @@
 package com.pluralsight.itphblackjack;
 
 
-    public class Main {
+import java.util.Scanner;
+
+public class Main {
         public static void main(String[] args) {
 
 
-            
           Spel spel = new Spel();
-          System.out.println("Welkom bij BlackJack, wilt u het geschudde deck kaarten zien? J/N?");
-          spel.spelFaseEen();
-          spel.spelFaseTwee();
 
+          spel.volledigSpel();
 
-
-        System.out.println("Het spel is ten einde gekomen!");
-  }
+          //spel.spelFaseEen();
+          //spel.spelFaseTwee();
+          System.out.println("Het spel is ten einde gekomen!");
+        }
 
 
 }

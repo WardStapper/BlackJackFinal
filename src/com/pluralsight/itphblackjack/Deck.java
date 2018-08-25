@@ -2,6 +2,8 @@ package com.pluralsight.itphblackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;
+//Deck klasse, 2 String arrays met daarin de kaart en het type kaart.
+//Aanmaak 2 ArrayLists om deck en handkaarten in onder te brengen
 
 public class Deck {
     String[] type = {"Harten", "Ruiten", "Schoppen", "Klaveren"};
@@ -9,6 +11,7 @@ public class Deck {
             "Boer", "Koningin", "Koning"};
     ArrayList<Kaart> deck = new ArrayList<>();
     ArrayList<Kaart> hand = new ArrayList<>();
+    int totaalscore =0;
     //Deckconstructor, zodra het spel begint (waarbij het deck aangemaakt wordt in de main) zal deze worden aangeroepen. Vult mijn deckarraylist hierboven met kaarten.
     public Deck() {
 
@@ -20,7 +23,7 @@ public class Deck {
                 deck.add(nieuw); //vult mijn deck met objecten type kaart
             }
         }
-        System.out.println(deck.size()); //checkup om te zien of er daadwerkelijk 52 kaarten zijn in mn deck.
+        System.out.println("Er zitten momenteel " + deck.size() + " kaarten in het deck!"); //checkup om te zien of er daadwerkelijk 52 kaarten zijn in mn deck.
 
     }
     //Schudden van mijn deck, collections functie.
@@ -46,10 +49,11 @@ public class Deck {
 
         if(hand.size() < 2){
             System.out.println("U heeft de volgende kaarten getrokken: ");
-            hand.add(deck.get(0));                                      //kaart toevoegen aan de hand
-            System.out.println(deck.get(0).type + " " + deck.get(0).kaart); //uitprinten  eerste getrokken kaart deck
-            deck.remove(0);                                     //verwijderen eerste kaart van het deck
-            System.out.println(deck.get(0).type + " " + deck.get(0).kaart); //tonen tweede getrokken kaart deck
+            for(int p = 0; p < 2; p++){
+                hand.add(deck.get(0));                                      //kaart toevoegen aan de hand
+                System.out.println(deck.get(0).type + " " + deck.get(0).kaart); //uitprinten  eerste en tweede getrokken kaart uit deck.
+                deck.remove(0);                                     //verwijderen eerste kaart van het deck
+            }
 
              }
              else {
@@ -83,44 +87,65 @@ public class Deck {
         //Weergave van de score van de kaarten in de hand.
        //Zorgt ervoor dat, zodra de score over de 21 gaat de aas score van 11 zal veranderen naar 1.
         //
-        public int handScore(){
-            int totaalscore =0;
+        public int handScore() {
 
+            int totaalscore = 0;
             System.out.println("Uw totaalscore is momenteel: ");
 
-        for (int i = 0; i <hand.size(); i++){               //loopt over de hand heen en zet de kaarten om in een score, telt deze bij elkaar op
-          //  System.out.println(hand.get(i).waarde);
-          totaalscore += hand.get(i).waarde;
-          if (totaalscore >21){
-              for (int h = 0; h<hand.size();h++){ //loopt over de hand heen, bekijkt of er een aas in de hand zit
-                  if (hand.get(h).Aas == true){
-                      hand.get(h).waarde = 1; //zet waarde van de aas om in 1
-                      totaalscore -= 10; //zorgt ervoor dat er 10 van de score af gaat
-                      hand.get(h).Aas = false;
-                      System.out.println("Uw aas is veranderd naar een 1!"); //check
-                      break;
-                  }
-              } //Bij geen aas in de hand en toch >21, spelverlies
-              System.out.println(totaalscore + ", helaas, u heeft verloren!");
-              System.exit(0);
+            for (int i = 0; i < hand.size(); i++) {               //loopt over de hand heen en zet de kaarten om in een score, telt deze bij elkaar op
+                //  System.out.println(hand.get(i).waarde);
 
-          }
-          else if(totaalscore ==21) { //spelwinst
-              System.out.println("Gefeliciteerd, u heeft gewonnen!");
-              System.exit(0);
-          }
+                totaalscore += hand.get(i).waarde;
+                if (totaalscore > 21) {
+                    for (int h = 0; h < hand.size(); h++) { //loopt over de hand heen, bekijkt of er een aas in de hand zit
+                        if (hand.get(h).Aas == true) {
+                            hand.get(h).waarde = 1; //zet waarde van de aas om in 1
+                            totaalscore -= 10; //zorgt ervoor dat er 10 van de score af gaat
+                            hand.get(h).Aas = false;
+                            System.out.println("Uw aas is veranderd naar een 1!"); //check
+                            break;
+                        } else if (totaalscore > 21) {          //Bij geen aas in de hand en toch >21, spelverlies
+                            System.out.println(totaalscore + ", helaas, u heeft verloren!");
+                           spelReset();        //reset het spel alvast voor een eventueel volgende ronde
 
+                             //  System.exit(0);
+                        }
+
+                    }
+
+                    } else if (totaalscore == 21) { //spelwinst
+                        System.out.println("Gefeliciteerd, u heeft gewonnen met " + totaalscore + " punten!");
+                        spelReset();
+                       // System.exit(0);
+                    }
+
+
+                }
+                System.out.println(totaalscore);
+                return totaalscore;
+
+            }
+
+    public void spelReset() {                        //terugstoppen van de kaarten in het deck, conceptueel
+
+        int handSize = hand.size();             //zet de handsize vóór reset vast, zodat ik deze kan gebruiken voor het resetten van mijn deck (anders krimpt de handsize mee tijdens de forloop -> 51 kaarten ipv 52)
+
+        for (int r = 0; r < handSize; r++) {
+
+            deck.add(hand.get(0));
+            hand.remove(0);
 
 
         }
-        System.out.println(totaalscore);
-                        return totaalscore;
-
-
-        }
+        totaalscore = 0;
 
 
     }
+
+    }
+
+
+
 
 
 

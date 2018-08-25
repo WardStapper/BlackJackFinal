@@ -6,6 +6,7 @@ public class Kaart {
     String kaart;
     int waarde;
     boolean Aas = false;
+    //Kaartconstructor
 //Aanmaak kaart waarde, veranderen van de 'stringwaarden' van mn object in een daadwerkelijke int 'waarde' zodat ik de score kan bijhouden.
     public Kaart(String t, String k){
 
@@ -27,3 +28,4 @@ public class Kaart {
     }
 
  }
+
