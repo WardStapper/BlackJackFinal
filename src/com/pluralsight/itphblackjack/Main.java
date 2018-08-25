@@ -1,8 +1,6 @@
 package com.pluralsight.itphblackjack;
 
 
-import java.util.Scanner;
-
 public class Main {
         public static void main(String[] args) {
 
@@ -10,7 +8,7 @@ public class Main {
           Spel spel = new Spel();
 
           spel.volledigSpel();
-          System.out.println("Het spel is ten einde gekomen!");
+
         }
 
 
