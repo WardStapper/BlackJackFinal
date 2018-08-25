@@ -106,7 +106,7 @@ public class Deck {
                             break;
                         } else if (totaalscore > 21) {          //Bij geen aas in de hand en toch >21, spelverlies
                             System.out.println(totaalscore + ", helaas, u heeft verloren!");
-                            deckReset();        //reset het spel alvast voor een eventueel volgende ronde
+                            deckReset();        //reset het spel alvast voor een eventueel volgende ronde //stopt ook meteen de x aantal keer 'helaas u heeft verloren
 
 
                         }
