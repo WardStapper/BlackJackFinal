@@ -6,8 +6,7 @@ public class Spel {
 
     Scanner sc = new Scanner(System.in);
     Deck spelDeck = new Deck();
-    boolean gevraagd = false;
-    boolean gepast = false;
+    boolean spelerInput = false;
     boolean nieuwspel = false;
 
 //Eerste fase van het spel waarbij de optie is om het geschudde kaartendeck te zien en de eerste twee kaarten getrokken worden
@@ -52,7 +51,7 @@ public class Spel {
     public void spelFaseTwee(){
         //while loop die zorgt voor de toetsen pkq
 
-        while (!gevraagd && !gepast) {
+        while (!spelerInput) {
             if (spelDeck.totaalscore < 21 || spelDeck.totaalscore !=21) {
                 System.out.println("Wat wilt u nu doen: ");
                 System.out.println("Toets p voor pas, toets k voor een nieuwe kaart, toets q om het spel te beïndigen.");
@@ -62,10 +61,10 @@ public class Spel {
             volgendeMove = volgendeMove.toLowerCase();
 
             if (volgendeMove.equals("p")) {
-                gepast = true;
+                spelerInput = true;
             } else if (volgendeMove.equals("k")) {
                 spelDeck.neemKaart();
-                gevraagd = true;                    //deze kan eventueel weggehaald worden om meer dan 1 kaart te nemen.
+                spelerInput = true;                    //deze kan eventueel weggehaald worden om meer dan 1 kaart te nemen.
             } else if (volgendeMove.equals("q")) {
                 System.out.println("Oké, jammer het spel sluit nu af!");
                 System.exit(0);
@@ -94,7 +93,7 @@ public class Spel {
                 spelDeck.spelReset();
                 eindeSpel = false;
                 nieuwspel = true;
-                gevraagd = false;
+                spelerInput = false;
                 System.out.println("Het spelDeck heeft nu weer " + (spelDeck.deck.size()) + " kaarten!"); // check om te kijken of mijn spelDeck weer 52 kaarten heeft
 
 
