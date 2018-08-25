@@ -30,6 +30,8 @@ public class Deck {
         System.out.println();
 
     }
+
+    //loopt door het deck heen en print uit welke kaart op welke positie zit.
     public void bekijkDeck(){
         for (int a = 0; a < deck.size(); a++) {
             System.out.println(deck.get(a).type + " " + deck.get(a).kaart);
@@ -53,13 +55,12 @@ public class Deck {
              else {
             System.out.println("U heeft de volgende kaart getrokken: ");
             System.out.println(deck.get(0).type + " " + deck.get(0).kaart);
+            hand.add(deck.get(0));
+            deck.remove(0);
         }
 
 
-        hand.add(deck.get(0));
 
-
-        deck.remove(0);
         bekijkHand();
         handScore();
 
@@ -75,6 +76,7 @@ public class Deck {
         for (int b = 0; b <hand.size(); b++){
                 System.out.println(hand.get(b).type + " " + hand.get(b).kaart);
             }
+
 
         }
 
