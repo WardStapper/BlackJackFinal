@@ -10,7 +10,7 @@ public class Spel {
     boolean gepast = false;
     boolean nieuwspel = false;
 
-
+//Eerste fase van het spel waarbij de optie is om het geschudde kaartendeck te zien en de eerste twee kaarten getrokken worden
     public void spelFaseEen(){
         boolean keuze = false;
 
@@ -49,7 +49,7 @@ public class Spel {
 
 
     }
-
+//tweede fase van het spel waarbij de speler de mogelijkheid krijgt om nog een kaart te trekken, te stoppen of te passen
     public void spelFaseTwee(){
         //while loop die zorgt voor de toetsen pkq
         while (!gevraagd && !gepast) {
@@ -81,7 +81,7 @@ public class Spel {
         while (!eindeSpel){
             spelFaseEen();
             spelFaseTwee();
-          //  while ()
+
             System.out.println();
             System.out.println("-----------------------");
             System.out.println("Wilt u het spel nogmaals spelen? J / N");
@@ -93,14 +93,13 @@ public class Spel {
                 eindeSpel = false;
                 nieuwspel = true;
                 gevraagd = false;
-                System.out.println("Het deck is nu weer");
-                System.out.println(deck.deck.size());
+                System.out.println("Het deck heeft nu weer " + (deck.deck.size()) + " kaarten!"); // check om te kijken of mijn deck weer 52 kaarten heeft
+
 
             }
             else if (replay.equals("N")) {
-                System.out.println("Oké, jammer het spel sluit nu af!");
-                eindeSpel = true;
-               // System.exit(0);
+                eindeSpel = true;   //zorgt ervoor dat ik uit de whileloop kan, waardoor het spel ten einde komt
+
 
             }
             else {
@@ -110,6 +109,7 @@ public class Spel {
 
 
         }
+        System.out.println("Het spel is ten einde gekomen!");
     }
 
 
