@@ -11,7 +11,7 @@ import java.util.Scanner;
            boolean keuze = false;
 
     System.out.println("Welkom bij BlackJack, wilt u het geschudde deck kaarten zien? J/N?");
-//
+//hile loop die vraagt of de speler het geschudde deck wil zien.
     while (!keuze) {
         String schudden = sc.nextLine();
         schudden = schudden.toUpperCase();
@@ -34,7 +34,7 @@ import java.util.Scanner;
 
     deck.neemKaart();
 
-
+    //while loop die zorgt voor de toetsen pkq
     while (!gevraagd && !gepast) {
         System.out.println("Wat wilt u nu doen: ");
         System.out.println("Toets p voor pas. ");
@@ -47,7 +47,7 @@ import java.util.Scanner;
             gepast = true;
         } else if (volgendeMove.equals("k")) {
             deck.neemKaart();
-            gevraagd = true;
+            gevraagd = true;                    //deze kan eventueel weggehaald worden om meer dan 1 kaart te nemen.
         } else if (volgendeMove.equals("q")) {
             System.out.println("Oké, jammer het spel sluit nu af!");
             System.exit(0);
@@ -55,9 +55,9 @@ import java.util.Scanner;
             System.out.println("Uw invoer is niet correct, probeer het openieuw!");
         }
 
-        System.out.println("Het spel is ten einde gekomen!");
 
     }
+        System.out.println("Het spel is ten einde gekomen!");
   }
 
 
