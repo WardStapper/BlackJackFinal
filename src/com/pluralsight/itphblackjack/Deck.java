@@ -89,8 +89,8 @@ public class Deck {
         //
         public int handScore() {
 
-            int totaalscore = 0;
-            System.out.println("Uw totaalscore is momenteel: ");
+             int totaalscore = 0;
+          
 
             for (int i = 0; i < hand.size(); i++) {               //loopt over de hand heen en zet de kaarten om in een score, telt deze bij elkaar op
                 //  System.out.println(hand.get(i).waarde);
@@ -121,7 +121,7 @@ public class Deck {
 
 
                 }
-                System.out.println(totaalscore);
+                System.out.println("U heeft een totaalscore van: " + totaalscore);
                 return totaalscore;
 
             }
