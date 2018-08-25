@@ -90,7 +90,7 @@ public class Spel {
             replay = replay.toUpperCase();
             if (replay.equals("J")){
 
-                spelDeck.spelReset();
+                spelDeck.deckReset();
                 eindeSpel = false;
                 nieuwspel = true;
                 spelerInput = false;

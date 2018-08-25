@@ -106,7 +106,7 @@ public class Deck {
                             break;
                         } else if (totaalscore > 21) {          //Bij geen aas in de hand en toch >21, spelverlies
                             System.out.println(totaalscore + ", helaas, u heeft verloren!");
-                            spelReset();        //reset het spel alvast voor een eventueel volgende ronde
+                            deckReset();        //reset het spel alvast voor een eventueel volgende ronde
 
 
                         }
@@ -115,7 +115,7 @@ public class Deck {
 
                 } else if (totaalscore == 21) { //spelwinst
                     System.out.println("Gefeliciteerd, u heeft gewonnen met " + totaalscore + " punten!");  //Weergave score met winst
-                    spelReset();
+                    deckReset();
 
                 }
 
@@ -128,7 +128,7 @@ public class Deck {
             return totaalscore;
         }
 
-    public void spelReset() {                        //terugstoppen van de kaarten in het spelDeck, conceptueel
+    public void deckReset() {                        //terugstoppen van de kaarten in het spelDeck, conceptueel
 
         int handSize = hand.size();             //zet de handsize vóór reset vast, zodat ik deze kan gebruiken voor het resetten van mijn spelDeck (anders krimpt de handsize mee tijdens de forloop -> 51 kaarten ipv 52)
 
@@ -139,7 +139,7 @@ public class Deck {
 
 
         }
-        totaalscore = 0;
+        totaalscore = 0;    //Zorgt ervoor dat de telling weer op 0 begint. 
 
 
     }
