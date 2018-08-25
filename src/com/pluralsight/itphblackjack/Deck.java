@@ -139,7 +139,7 @@ public class Deck {
 
 
         }
-        totaalscore = 0;    //Zorgt ervoor dat de telling weer op 0 begint. 
+        totaalscore = 0;    //Zorgt ervoor dat de telling weer op 0 begint.
 
 
     }
