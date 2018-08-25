@@ -19,7 +19,7 @@ public class Deck {
             for (String k : kaart) {
 
 
-                Kaart nieuw = new Kaart(t, k); //zorgt ervoor dat er in kaart mijn kaarten een waarde krijgen.
+                Kaart nieuw = new Kaart(t, k); //maakt objecten type kaart aan, met als kenmerken type en kaart van mijn arrays.
                 deck.add(nieuw); //vult mijn spelDeck met objecten type kaart
             }
         }
