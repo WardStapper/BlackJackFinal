@@ -6,8 +6,8 @@ public class Spel {
 
     Scanner sc = new Scanner(System.in);
     Deck spelDeck = new Deck();
-    boolean spelerInput = false;
-    boolean nieuwspel = false;
+    private  boolean spelerInput = false;
+    private boolean nieuwspel = false;
 
 //Eerste fase van het spel waarbij de optie is om het geschudde kaartendeck te zien en de eerste twee kaarten getrokken worden
     public void spelFaseEen(){
