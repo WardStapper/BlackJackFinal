@@ -65,6 +65,7 @@ public class Spel {
             volgendeMove = volgendeMove.toLowerCase();
 
             if (volgendeMove.equals("p")) {
+                System.out.println("U heeft gepast!");
                 spelerInput = true;
             } else if (volgendeMove.equals("k")) {
                 spelDeck.neemKaart();
