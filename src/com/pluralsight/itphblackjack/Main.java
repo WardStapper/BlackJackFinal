@@ -10,9 +10,6 @@ public class Main {
           Spel spel = new Spel();
 
           spel.volledigSpel();
-
-          //spel.spelFaseEen();
-          //spel.spelFaseTwee();
           System.out.println("Het spel is ten einde gekomen!");
         }
 
