@@ -7,7 +7,7 @@ public class Spel {
     Scanner sc = new Scanner(System.in);
     Deck spelDeck = new Deck();
     private  boolean spelerInput = false;
-    private boolean nieuwspel = false;
+    private boolean nieuwspel = false;      //zorgt voor verschillend welkom bij een nieuwspel
 
 //Eerste fase van het spel waarbij de optie is om het geschudde kaartendeck te zien en de eerste twee kaarten getrokken worden
     public void spelFaseEen(){
@@ -97,7 +97,7 @@ public class Spel {
 
                 spelDeck.deckReset();
                 eindeSpel = false;
-                nieuwspel = true;
+                nieuwspel = true;   //zorgt voor ander welkom bij nieuw spel
                 spelerInput = false;
                 System.out.println("Het spelDeck heeft nu weer " + (spelDeck.deck.size()) + " kaarten!"); // check om te kijken of mijn spelDeck weer 52 kaarten heeft
 
