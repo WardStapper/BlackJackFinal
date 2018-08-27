@@ -96,14 +96,14 @@ public class Deck {
                 //  System.out.println(hand.get(i).waarde);
 
                 totaalscore += hand.get(i).waarde;
-                if (totaalscore > 21) {
+                if (totaalscore > 21) { //bij een handscore groter dan 21 wil ik kijken of er een aas tussen zit
                     for (int h = 0; h < hand.size(); h++) { //loopt over de hand heen, bekijkt of er een aas in de hand zit
                         if (hand.get(h).Aas == true) {
                             hand.get(h).waarde = 1; //zet waarde van de aas om in 1
                             totaalscore -= 10; //zorgt ervoor dat er 10 van de score af gaat
                             hand.get(h).Aas = false;
                             System.out.println("Uw aas is veranderd naar een 1!"); //check
-                            break;
+                            break;  //zodra de aas is gewisseld wil ik uit de loop
                         } else if (totaalscore > 21) {          //Bij geen aas in de hand en toch >21, spelverlies
                             System.out.println(totaalscore + ", helaas, u heeft verloren!");
                             deckReset();        //reset het spel alvast voor een eventueel volgende ronde //stopt ook meteen de x aantal keer 'helaas u heeft verloren
